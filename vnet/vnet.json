@@ -28,9 +28,7 @@
             }
         }
     },
-    "variables": {
-        "subnet-id": "[concat(parameters('vnet-id'), '/subnets/', parameters('default-subnet-name'))]"
-    },
+    "variables": {},
     "resources": [
         {
             "apiVersion": "2018-10-01",
