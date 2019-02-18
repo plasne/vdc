@@ -1,0 +1,1 @@
+az network lb create --resource-group $1 --name $2
