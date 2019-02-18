@@ -9,7 +9,7 @@
             "value": "172.168.12.0/24"
         },
         "subnet-name": {
-            "value": "default"
+            "value": "main"
         },
         "subnet-cidr": {
             "value": "172.168.12.0/28",
