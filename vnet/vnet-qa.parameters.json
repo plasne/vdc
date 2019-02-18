@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnet-name": {
+            "value": "pelasne-vdc-qa"
+        },
+        "vnet-cidr": {
+            "value": "172.168.11.0/24"
+        },
+        "subnet-name": {
+            "value": "main"
+        },
+        "subnet-cidr": {
+            "value": "172.168.11.0/28",
+            "metadata": {
+                "description": "CIDR notation for the address space."
+            }
+        }
+    }
+}
