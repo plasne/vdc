@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "vnet-name": {
-            "value": "pelasne-vdc-prod"
+            "value": "pelasne-vdc-qa"
         },
         "vnet-cidr": {
-            "value": "172.168.12.0/24"
+            "value": "172.168.11.0/24"
         },
         "subnet-name": {
             "value": "main"
         },
         "subnet-cidr": {
-            "value": "172.168.12.0/28",
+            "value": "172.168.11.0/28",
             "metadata": {
                 "description": "CIDR notation for the address space."
             }
