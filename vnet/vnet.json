@@ -37,7 +37,7 @@
             "location": "[resourceGroup().location]",
             "properties": {
                 "addressSpace": {
-                    "addressPrefixes": ["[parameters('vnet-prefix')]"]
+                    "addressPrefixes": ["[parameters('vnet-cidr')]"]
                 }
             },
             "resources": [
@@ -48,7 +48,7 @@
                     "name": "[parameters('subnet-name')]",
                     "dependsOn": ["[parameters('vnet-name')]"],
                     "properties": {
-                        "addressPrefix": "[parameters('subnet-prefix')]"
+                        "addressPrefix": "[parameters('subnet-cidr')]"
                     }
                 }
             ]
