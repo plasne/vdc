@@ -1,0 +1,59 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnet-name": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the virtual network."
+            }
+        },
+        "vnet-cidr": {
+            "type": "string",
+            "metadata": {
+                "description": "CIDR notation for the address space."
+            }
+        },
+        "subnet-name": {
+            "type": "string",
+            "defaultValue": "default",
+            "metadata": {
+                "description": "Name of the default subnet."
+            }
+        },
+        "subnet-cidr": {
+            "type": "string",
+            "metadata": {
+                "description": "CIDR notation for the address space."
+            }
+        }
+    },
+    "variables": {
+        "subnet-id": "[concat(parameters('vnet-id'), '/subnets/', parameters('default-subnet-name'))]"
+    },
+    "resources": [
+        {
+            "apiVersion": "2018-10-01",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('vnet-name')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": ["[parameters('vnet-prefix')]"]
+                }
+            },
+            "resources": [
+                {
+                    "apiVersion": "2018-10-01",
+                    "type": "subnets",
+                    "location": "[resourceGroup().location]",
+                    "name": "[parameters('subnet-name')]",
+                    "dependsOn": ["[parameters('vnet-name')]"],
+                    "properties": {
+                        "addressPrefix": "[parameters('subnet-prefix')]"
+                    }
+                }
+            ]
+        }
+    ]
+}
