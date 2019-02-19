@@ -1,0 +1,17 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "create-release.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adal-node": "^0.1.28",
+    "commander": "^2.19.0",
+    "dotenv": "^6.2.0",
+    "url-join": "^4.0.0"
+  }
+}
